@@ -140,4 +140,15 @@ def query_order_products():
     print("Second Product")
     for product in second_order.products:
         print(f"Product Name: {product.name}")
-        
+
+
+def get_all_users():
+    users = User.query.all()
+
+    for user in users:
+        print(f"User Name: {user.name}")
+
+    user_count = User.query.count()
+
+    print(f"User Count: {user_count}")
+    
