@@ -126,3 +126,18 @@ def add_products_to_orders():
     first_order.products.append(second_product)
 
     db.session.commit()
+
+
+def query_order_products():
+    first_order = Order.query.filter_by(id=1).first()
+    second_order = Order.query.filter_by(id=2).first()
+
+
+    print("First Order Product")
+    for product in first_order.products:
+        print(f"Product Name: {product.name}")
+
+    print("Second Product")
+    for product in second_order.products:
+        print(f"Product Name: {product.name}")
+        
